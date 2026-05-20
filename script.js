@@ -129,8 +129,8 @@ class RealViewCounter {
 // 3. UI RENDERING & DOM INJECTION
 // ==========================================
 const SVG_EYE_ICON = `
-    <span class="views-icon" aria-hidden="true">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+    <span class="views-icon" aria-hidden="true" style="display: inline-flex; align-items: center; justify-content: center; color: var(--primary); vertical-align: middle; margin-right: 2px;">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="14" height="14" style="width: 14px; height: 14px; stroke: currentColor; stroke-width: 2.2; fill: none; display: inline-block;">
             <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
             <circle cx="12" cy="12" r="3"></circle>
         </svg>
