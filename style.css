@@ -237,3 +237,120 @@ main {
     }
 }
 
+/* Real Likes Badge Styling */
+.likes-count-wrap {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    opacity: 0;
+    transform: translateY(2px);
+    transition: opacity 0.5s cubic-bezier(0.16, 1, 0.3, 1), transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.likes-count-wrap.loaded {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.likes-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: #e05260;
+    vertical-align: middle;
+}
+
+.likes-icon svg {
+    width: 14px;
+    height: 14px;
+    stroke: currentColor;
+    stroke-width: 2.2;
+    fill: none;
+    transition: fill 0.3s ease, transform 0.3s ease;
+}
+
+.likes-count-wrap.liked .likes-icon svg {
+    fill: #e05260;
+}
+
+.likes-count {
+    display: inline-block;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+/* Interactive Like Button at Bottom of Post */
+.like-button-container {
+    margin: 36px 0 24px;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.like-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 22px;
+    background: var(--surface-soft);
+    border: 1px solid var(--border);
+    border-radius: 100px;
+    color: var(--text-muted);
+    font-family: 'Inter', system-ui, sans-serif;
+    font-size: 0.95rem;
+    font-weight: 500;
+    cursor: pointer;
+    user-select: none;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.like-btn:hover {
+    background: #fff5f6;
+    border-color: #f7bec3;
+    color: #c73c4c;
+    box-shadow: 0 4px 12px rgba(224, 82, 96, 0.06);
+}
+
+.like-btn .btn-heart-icon svg {
+    width: 18px;
+    height: 18px;
+    stroke: currentColor;
+    stroke-width: 2.2;
+    fill: none;
+    transition: fill 0.3s cubic-bezier(0.16, 1, 0.3, 1), transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    display: inline-block;
+    vertical-align: middle;
+}
+
+/* Active Liked State */
+.like-btn.liked {
+    background: #fff0f1;
+    border-color: #f7a8b0;
+    color: #c73c4c;
+    box-shadow: 0 6px 16px rgba(224, 82, 96, 0.12);
+}
+
+.like-btn.liked .btn-heart-icon svg {
+    fill: #e05260;
+    stroke: #e05260;
+}
+
+/* Pop Animation when clicked */
+.like-btn.pop .btn-heart-icon svg {
+    animation: heart-pop 0.45s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+@keyframes heart-pop {
+    0% {
+        transform: scale(1);
+    }
+    30% {
+        transform: scale(0.65);
+    }
+    70% {
+        transform: scale(1.35);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+
